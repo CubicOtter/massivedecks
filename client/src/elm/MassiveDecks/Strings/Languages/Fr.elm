@@ -132,83 +132,83 @@ translate _ mdString =
             [ Text "En apprendre plus sur ", ref MassiveDecks, Text " et son développement." ]
 
         MDLogoDescription ->
-            [ Text "A ", ref (noun Call 1), Text " and a ", ref (noun Response 1), Text " marked with an “M” and a “D”." ]
+            [ Text "Une ", ref (noun Call 1), Text " et une ", ref (noun Response 1), Text " marquées avec un « M » et un « D »." ]
 
         RereadLogoDescription ->
-            [ Text "A book circled by a recycling arrow." ]
+            [ Text "Un livre entouré d'une flèche de recyclage." ]
 
         MDProject ->
-            [ Text "the GitHub project" ]
+            [ Text "le projet GitHub" ]
 
         License ->
-            [ Text "the AGPLv3 license" ]
+            [ Text "la licence AGPLv3" ]
 
         DevelopedByReread ->
-            [ Text "Developed by ", ref RereadGames, Text "." ]
+            [ Text "Développé par ", ref RereadGames, Text "." ]
 
         RereadGames ->
             [ Text "Reread Games" ]
 
         NameLabel ->
-            [ Text "Your Name" ]
+            [ Text "Votre nom" ]
 
         NameInUse ->
-            [ Text "Someone else is using this name in the game—please try a different one." ]
+            [ Text "Quelqu'un d'autre utilise ce nom dans le jeu—veuillez en essayer un autre." ]
 
         RejoinTitle ->
-            [ Text "Rejoin Game" ]
+            [ Text "Rejoindre la partie" ]
 
         RejoinGame { code } ->
-            [ Text "Rejoin “", GameCode { code = code } |> ref, Text "”." ]
+            [ Text "Rejoindre « ", GameCode { code = code } |> ref, Text " »." ]
 
         LobbyRequiresPassword ->
-            [ Text "You need a password to join this game. Try asking the person that invited you." ]
+            [ Text "Vous avez besoin d'un mot de passe pour rejoindre cette partie. Essayez de demander à la personne qui vous a invité." ]
 
         YouWereKicked ->
-            [ Text "You were kicked from the game." ]
+            [ Text "Vous avez été expulsé de la partie." ]
 
         ScrollToTop ->
-            [ Text "Scroll to the top." ]
+            [ Text "Revenir en haut." ]
 
         Copy ->
-            [ Text "Copy" ]
+            [ Text "Copier" ]
 
         -- Rules
         CardsAgainstHumanity ->
             [ Text "Cards Against Humanity" ]
 
         Rules ->
-            [ Text "How to play." ]
+            [ Text "Comment jouer." ]
 
         RulesHand ->
-            [ Text "Each player has a hand of ", ref (nounUnknownQuantity Response), Text "." ]
+            [ Text "Chaque joueur a une main de ", ref (nounUnknownQuantity Response), Text "." ]
 
         RulesCzar ->
-            [ Text "The first player begins as the "
+            [ Text "Le premier joueur commence en tant que "
             , ref Czar
-            , Text ". the "
+            , Text ". Le "
             , ref Czar
-            , Text " reads the question or fill-in-the-blank phrase on the "
+            , Text " lit la question ou la phrase à compléter sur la "
             , ref (noun Call 1)
-            , Text " out loud."
+            , Text " à voix haute."
             ]
 
         RulesPlaying ->
-            [ Text "Everyone else answers the question or fills in the blank by choosing a "
+            [ Text "Tous les autres répondent à la question ou complètent la phrase en choisissant une "
             , ref (noun Response 1)
-            , Text " from their hand to play for the round."
+            , Text " de leur main à jouer pour le tour."
             ]
 
         RulesJudging ->
-            [ Text "The answers are then shuffled and the "
+            [ Text "Les réponses sont ensuite mélangées, et le "
             , ref Czar
-            , Text " reads them out to the other players—for full effect, the "
+            , Text " les lit aux autres joueurs—pour un effet maximal, le "
             , ref Czar
-            , Text " should usually re-read the "
+            , Text " devrait généralement relire la "
             , ref (noun Call 1)
-            , Text " before presenting each answer. The "
+            , Text " avant de présenter chaque réponse. Le "
             , ref Czar
-            , Text " then picks the funniest play, and whoever played it gets one "
+            , Text " choisit ensuite la réponse la plus drôle, et celui qui l'a jouée gagne un "
             , ref (noun Point 1)
             , Text "."
             ]
@@ -217,195 +217,196 @@ translate _ mdString =
             [ ref (Pick { numberOfCards = 2 }) ]
 
         RulesPick ->
-            [ Text "Some cards will need more than one "
+            [ Text "Certaines cartes nécessiteront plus d'une "
             , ref (noun Response 1)
-            , Text " as an answer. Play the cards in the order the "
+            , Text " comme réponse. Jouez les cartes dans l'ordre où le "
             , ref Czar
-            , Text " should read them—the order matters."
+            , Text " doit les lire—l'ordre est important."
             ]
 
         ExamplePickDescription ->
-            [ ref (nounUnknownQuantity Call)
-            , Text " like this will require picking more "
+            [ Text "Des "
+            , ref (nounUnknownQuantity Call)
+            , Text " comme celle-ci nécessiteront de choisir davantage de "
             , ref (nounUnknownQuantity Response)
-            , Text ", but give you more to pick from."
+            , Text ", mais vous donneront plus d'options."
             ]
 
         RulesDraw ->
-            [ Text "Some "
+            [ Text "Certaines "
             , ref (nounUnknownQuantity Call)
-            , Text " will need even more "
+            , Text " nécessiteront encore plus de "
             , ref (nounUnknownQuantity Response)
-            , Text "—these will say "
+            , Text "—elles indiqueront "
             , ref (Draw { numberOfCards = 2 })
-            , Text " or more, and you’ll get that many extra cards before you play."
+            , Text " ou plus, et vous recevrez autant de cartes supplémentaires avant de jouer."
             ]
 
         GameRulesTitle ->
-            [ Text "Game Rules" ]
+            [ Text "Règles du jeu" ]
 
         HouseRulesTitle ->
-            [ Text "House Rules" ]
+            [ Text "Règles personnalisées" ]
 
         HouseRules ->
-            [ Text "You can change the way the game is played in a variety of ways. While setting up the game, choose "
-            , Text "as many house rules as you would like to use."
+            [ Text "Vous pouvez modifier la manière de jouer au jeu de différentes manières. Lors de la configuration de la partie, choisissez "
+            , Text "autant de règles personnalisées que vous souhaitez utiliser."
             ]
 
         HouseRuleReboot ->
-            [ Text "Rebooting the Universe" ]
+            [ Text "Redémarrage de l'univers" ]
 
         HouseRuleRebootDescription { cost } ->
-            [ Text "At any time, players may trade in "
+            [ Text "À tout moment, les joueurs peuvent échanger "
             , Text (an cost)
             , ref (nounMaybe Point cost)
-            , Text " to discard their hand and draw a new one."
+            , Text " pour défausser leur main et en tirer une nouvelle."
             ]
 
         HouseRuleRebootAction { cost } ->
-            [ Text "Spend "
+            [ Text "Dépensez "
             , Text (asWord cost)
             , Text " "
             , ref (noun Point cost)
-            , Text " to discard your hand and draw a new one."
+            , Text " pour défausser votre main et en tirer une nouvelle."
             ]
 
         HouseRuleRebootCost ->
-            [ ref (noun Point 1), Text " Cost" ]
+            [ ref (noun Point 1), Text " Coût" ]
 
         HouseRuleRebootCostDescription ->
-            [ Text "How many ", ref (nounUnknownQuantity Point), Text " it costs to redraw." ]
+            [ Text "Combien de ", ref (nounUnknownQuantity Point), Text " il en coûte pour refaire une main." ]
 
         HouseRulePackingHeat ->
-            [ Text "Packing Heat" ]
+            [ Text "Jouer gros" ]
 
         HouseRulePackingHeatDescription ->
-            [ Text "Any "
-            , ref (nounUnknownQuantity Call)
-            , Text " with "
+            [ Text "Toute "
+            , ref (noun Call 1)
+            , Text " avec "
             , ref (Pick { numberOfCards = 2 })
-            , Text " also get "
+            , Text " reçoit aussi "
             , ref (Draw { numberOfCards = 1 })
-            , Text ", so everyone has more options."
+            , Text ", afin que tout le monde ait plus d'options."
             ]
 
         HouseRuleComedyWriter ->
-            [ Text "Comedy Writer" ]
+            [ Text "Écrivain comique" ]
 
         HouseRuleComedyWriterDescription ->
-            [ Text "Add blank "
+            [ Text "Ajoutez des "
             , ref (nounUnknownQuantity Response)
-            , Text " where players can write custom responses."
+            , Text " vierges où les joueurs peuvent écrire des réponses personnalisées."
             ]
 
         HouseRuleComedyWriterNumber ->
-            [ Text "Blank ", ref (nounUnknownQuantity Response) ]
+            [ ref (nounUnknownQuantity Response), Text " vierges" ]
 
         HouseRuleComedyWriterNumberDescription ->
-            [ Text "The number of Blank "
+            [ Text "Le nombre de "
             , ref (nounUnknownQuantity Response)
-            , Text " that will be in the game."
+            , Text " vierges qui seront dans la partie."
             ]
 
         HouseRuleComedyWriterExclusive ->
-            [ Text "Only Blank ", ref (nounUnknownQuantity Response) ]
+            [ Text "Seulement des ", ref (nounUnknownQuantity Response), Text " vierges" ]
 
         HouseRuleComedyWriterExclusiveDescription ->
-            [ Text "If enabled, all other "
+            [ Text "Si activé, toutes les autres "
             , ref (nounUnknownQuantity Response)
-            , Text " will be ignored, only blank ones will exist in-game."
+            , Text " seront ignorées, seules les vierges existeront dans le jeu."
             ]
 
         HouseRuleRandoCardrissian ->
             [ Text "Rando Cardrissian" ]
 
         HouseRuleRandoCardrissianDescription ->
-            [ Text "Every round, the first "
+            [ Text "À chaque tour, la première "
             , ref (noun Response 1)
-            , Text " in the deck will be played as an answer. This play belongs to an AI player named "
-            , Text "Rando Cardrissian, and if he wins the game, all players go home in a state of everlasting shame."
+            , Text " du paquet sera jouée comme réponse. Ce jeu appartient à un joueur IA nommé "
+            , Text "Rando Cardrissian, et s'il gagne la partie, tous les joueurs rentrent chez eux dans un état de honte éternelle."
             ]
 
         HouseRuleRandoCardrissianNumber ->
-            [ Text "AI Players" ]
+            [ Text "Joueurs IA" ]
 
         HouseRuleRandoCardrissianNumberDescription ->
-            [ Text "The number of AI players that will be in the game." ]
+            [ Text "Le nombre de joueurs IA dans la partie." ]
 
         HouseRuleNeverHaveIEver ->
-            [ Text "Never Have I Ever" ]
+            [ Text "Je n'ai jamais..." ]
 
         HouseRuleNeverHaveIEverDescription ->
-            [ Text "At any time, a player may discard cards they don't understand, however, they must confess their "
-            , Text "ignorance: the card is shared publicly."
+            [ Text "À tout moment, un joueur peut défausser des cartes qu'il ne comprend pas, mais il doit avouer son "
+            , Text "ignorance : la carte est partagée publiquement."
             ]
 
         HouseRuleHappyEnding ->
             [ Text "Happy Ending" ]
 
         HouseRuleHappyEndingDescription ->
-            [ Text "When the game ends, the final round is a 'Make a Haiku' ", ref (noun Call 1), Text "." ]
+            [ Text "Quand la partie se termine, le dernier tour est une ", ref (noun Call 1), " 'Créer un Haïku'." ]
 
         HouseRuleCzarChoices ->
-            [ ref Czar, Text " Choices" ]
+            [ Text "Choix du ", ref Czar ]
 
         HouseRuleCzarChoicesDescription ->
-            [ Text "At the beginning of the round, the "
+            [ Text "Au début du tour, le "
             , ref Czar
-            , Text " draws multiple "
+            , Text " pioche plusieurs "
             , ref (nounUnknownQuantity Call)
-            , Text " and chooses one of them, and/or has the choice to write their own."
+            , Text " et en choisit une, et/ou a le choix d'écrire la sienne."
             ]
 
         HouseRuleCzarChoicesNumber ->
-            [ Text "Number" ]
+            [ Text "Nombre" ]
 
         HouseRuleCzarChoicesNumberDescription ->
-            [ Text "The number of choices to give the ", ref Czar, Text " to pick between." ]
+            [ Text "Le nombre de choix à donner au ", ref Czar, Text " parmi lesquelles choisir." ]
 
         HouseRuleCzarChoicesCustom ->
-            [ Text "Custom" ]
+            [ Text "Personnalisé" ]
 
         HouseRuleCzarChoicesCustomDescription ->
-            [ Text "If the ", ref Czar, Text " can write custom calls. This takes up one of the choices." ]
+            [ Text "Si le ", ref Czar, Text " peut écrire des ", ref (nounUnknownQuantity Call), " personnalisées. Cela prend l'une des options." ]
 
         HouseRuleWinnersPick ->
-            [ Text "Winner's Pick" ]
+            [ Text "Choix du gagnant" ]
 
         HouseRuleWinnersPickDescription ->
-            [ Text "The winner of each round becomes the ", ref Czar, Text " for the next round." ]
+            [ Text "Le gagnant de chaque tour devient le ", ref Czar, Text " pour le tour suivant." ]
 
         SeeAlso { rule } ->
-            [ Text "See also: ", ref rule ]
+            [ Text "Voir aussi : ", ref rule ]
 
         MustBeMoreThanOrEqualValidationError { min } ->
-            [ Text "The value must be at least ", Text (String.fromInt min), Text "." ]
+            [ Text "La valeur doit être au moins ", Text (String.fromInt min), Text "." ]
 
         MustBeLessThanOrEqualValidationError { max } ->
-            [ Text "The value must be at most ", Text (String.fromInt max), Text "." ]
+            [ Text "La valeur doit être au plus ", Text (String.fromInt max), Text "." ]
 
         SetValue { value } ->
-            [ Text "Set the value to ", Text (String.fromInt value), Text "." ]
+            [ Text "Définir la valeur à ", Text (String.fromInt value), Text "." ]
 
         CantBeEmpty ->
-            [ Text "This can't be empty." ]
+            [ Text "Cela ne peut pas être vide." ]
 
         SettingsTitle ->
-            [ Text "Settings" ]
+            [ Text "Paramètres" ]
 
         LanguageSetting ->
-            [ Text "Language" ]
+            [ Text "Langue" ]
 
         MissingLanguage ->
-            [ Text "Don’t see your language? ", ref TranslationBeg ]
+            [ Text "Vous ne voyez pas votre langue ? ", ref TranslationBeg ]
 
         AutonymFormat { autonym } ->
             [ Text "(", Text autonym, Text ")" ]
 
         TranslationBeg ->
-            [ Text "Help translate "
+            [ Text "Aidez à traduire "
             , ref MassiveDecks
-            , Text "!"
+            , Text " !"
             ]
 
         CardSizeSetting ->
