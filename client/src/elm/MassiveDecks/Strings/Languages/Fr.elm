@@ -1329,37 +1329,37 @@ translate _ mdString =
 
         -- Language Names
         English ->
-            [ Text "English" ]
+            [ Text "Anglais" ]
 
         BritishEnglish ->
-            [ Text "English (British)" ]
+            [ Text "Anglais (Britannique)" ]
 
         Italian ->
-            [ Text "Italian" ]
+            [ Text "Italien" ]
 
         BrazilianPortuguese ->
-            [ Text "Portuguese (Brazilian)" ]
+            [ Text "Portugais (Brésilien)" ]
 
         German ->
-            [ Text "German (Formal)" ]
+            [ Text "Allemand (Formel)" ]
 
         GermanInformal ->
-            [ Text "German (Informal)" ]
+            [ Text "Allemand (Informel)" ]
 
         Polish ->
-            [ Text "Polish" ]
+            [ Text "Polonnais" ]
 
         Indonesian ->
-            [ Text "Indonesian" ]
+            [ Text "Indonésien" ]
 
         Spanish ->
-            [ Text "Spanish" ]
+            [ Text "Espagnol" ]
 
         Korean ->
-            [ Text "Korean" ]
+            [ Text "Coréen" ]
 
         French ->
-            [ Text "French" ]
+            [ Text "Français" ]
 
 
 
