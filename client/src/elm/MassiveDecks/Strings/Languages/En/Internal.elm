@@ -1311,6 +1311,9 @@ translate _ mdString =
 
         BrazilianPortuguese ->
             [ Text "Portuguese (Brazilian)" ]
+            
+        French ->
+            [ Text "French" ]
 
         German ->
             [ Text "German (Formal)" ]
@@ -1329,6 +1332,7 @@ translate _ mdString =
 
         Korean ->
             [ Text "Korean" ]
+
 
 
 
