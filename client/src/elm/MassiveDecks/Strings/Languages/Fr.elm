@@ -49,7 +49,7 @@ translate _ mdString =
                             [ Text "Carte Blanche" ]
 
                         Point ->
-                            [ Text "Point d’Excellence" ]
+                            [ Text "Point d'Excellence" ]
 
                         Player ->
                             [ Text "Joueur" ]
@@ -66,7 +66,7 @@ translate _ mdString =
                             [ Text "Cartes Blanches" ]
 
                         Point ->
-                            [ Text "Points d’Excellence" ]
+                            [ Text "Points d'Excellence" ]
 
                         Player ->
                             [ Text "Joueurs" ]
@@ -91,7 +91,7 @@ translate _ mdString =
             [ Text "Un jeu d'ambiance décalé." ]
 
         WhatIsThis ->
-            [ Text "Qu’est-ce que ", ref MassiveDecks, Text "?" ]
+            [ Text "Qu'est-ce que ", ref MassiveDecks, Text "?" ]
 
         GameDescription ->
             [ ref MassiveDecks
@@ -344,7 +344,7 @@ translate _ mdString =
             [ Text "Happy Ending" ]
 
         HouseRuleHappyEndingDescription ->
-            [ Text "Quand la partie se termine, le dernier tour est une ", ref (noun Call 1), " 'Créer un Haïku'." ]
+            [ Text "Quand la partie se termine, le dernier tour est une ", ref (noun Call 1), Text " 'Créer un Haïku'." ]
 
         HouseRuleCzarChoices ->
             [ Text "Choix du ", ref Czar ]
@@ -367,7 +367,7 @@ translate _ mdString =
             [ Text "Personnalisé" ]
 
         HouseRuleCzarChoicesCustomDescription ->
-            [ Text "Si le ", ref Czar, Text " peut écrire des ", ref (nounUnknownQuantity Call), " personnalisées. Cela prend l'une des options." ]
+            [ Text "Si le ", ref Czar, Text " peut écrire des ", ref (nounUnknownQuantity Call), Text " personnalisées. Cela prend l'une des options." ]
 
         HouseRuleWinnersPick ->
             [ Text "Choix du gagnant" ]
@@ -418,7 +418,7 @@ translate _ mdString =
             [ Text "Avancer Automatiquement le Tour" ]
 
         AutoAdvanceExplanation ->
-            [ Text "À la fin d’un tour, passez automatiquement au suivant sans attendre." ]
+            [ Text "À la fin d'un tour, passez automatiquement au suivant sans attendre." ]
 
         SpeechSetting ->
             [ Text "Synthèse Vocale" ]
@@ -427,7 +427,7 @@ translate _ mdString =
             [ Text "Lisez les cartes à haute voix grâce à la synthèse vocale." ]
 
         SpeechNotSupportedExplanation ->
-            [ Text "Votre navigateur ne prend pas en charge la synthèse vocale ou n’a pas de voix installées." ]
+            [ Text "Votre navigateur ne prend pas en charge la synthèse vocale ou n'a pas de voix installées." ]
 
         VoiceSetting ->
             [ Text "Voix de Synthèse" ]
@@ -442,7 +442,7 @@ translate _ mdString =
             [ Text "Votre navigateur ne prend pas en charge les notifications." ]
 
         NotificationsBrowserPermissions ->
-            [ Text "Vous devez donner l’autorisation à "
+            [ Text "Vous devez donner l'autorisation à "
             , ref MassiveDecks
             , Text " de vous notifier. Cela ne sera utilisé que lorsque le jeu est ouvert et cette option activée."
             ]
@@ -476,13 +476,13 @@ translate _ mdString =
             [ Text "Code de Partie" ]
 
         GameCodeDescription ->
-            [ Text "Un code qui permet à d’autres personnes de trouver et rejoindre votre partie." ]
+            [ Text "Un code qui permet à d'autres personnes de trouver et rejoindre votre partie." ]
 
         GameCode { code } ->
             [ Text code ]
 
         GameCodeSpecificDescription ->
-            [ Text "Donnez ce code de partie aux personnes pour qu’elles puissent rejoindre la partie." ]
+            [ Text "Donnez ce code de partie aux personnes pour qu'elles puissent rejoindre la partie." ]
 
         GameCodeHowToAcquire ->
             [ Text "Demandez à la personne qui vous a invité le ", ref GameCodeTerm, Text "." ]
@@ -506,7 +506,7 @@ translate _ mdString =
             [ Text "En Train de Jouer" ]
 
         PlayingDescription ->
-            [ Text "Ce joueur est dans le tour, mais n’a pas encore soumis de cartes." ]
+            [ Text "Ce joueur est dans le tour, mais n'a pas encore soumis de cartes." ]
 
         Played ->
             [ Text "A Joué" ]
@@ -525,7 +525,7 @@ translate _ mdString =
             [ Text "Parties en cours." ]
 
         SettingUpGame ->
-            [ Text "Parties qui n’ont pas encore commencé." ]
+            [ Text "Parties qui n'ont pas encore commencé." ]
 
         StartYourOwn ->
             [ Text "Créer une nouvelle partie ?" ]
@@ -636,7 +636,7 @@ translate _ mdString =
             [ Text "Déconnecté" ]
 
         DisconnectedDescription ->
-            [ Text "Cet utilisateur n’est pas connecté à la partie." ]
+            [ Text "Cet utilisateur n'est pas connecté à la partie." ]
 
         Privileged ->
             [ Text "Propriétaire" ]
@@ -648,7 +648,7 @@ translate _ mdString =
             [ Text "IA" ]
 
         AiDescription ->
-            [ Text "Ce joueur est contrôlé par l’ordinateur." ]
+            [ Text "Ce joueur est contrôlé par l'ordinateur." ]
 
         Score { total } ->
             [ Text (String.fromInt total) ]
@@ -663,7 +663,7 @@ translate _ mdString =
             [ Text (String.fromInt total) ]
 
         LikesDescription ->
-            [ Text "Le nombre de mentions “j’aime” reçues."
+            [ Text "Le nombre de mentions “j'aime” reçues."
             ]
 
         ToggleUserList ->
@@ -776,15 +776,15 @@ translate _ mdString =
         MissingCardType { cardType } ->
             [ Text "Aucun de vos paquets ne contient de "
             , ref (nounUnknownQuantity cardType)
-            , Text ". Vous avez besoin d’un paquet qui en contient pour commencer la partie."
+            , Text ". Vous avez besoin d'un paquet qui en contient pour commencer la partie."
             ]
 
         NotEnoughCardsOfType { cardType, needed, have } ->
-            [ Text "Pour le nombre de joueurs dans la partie, vous avez besoin d’au moins "
+            [ Text "Pour le nombre de joueurs dans la partie, vous avez besoin d'au moins "
             , Text (needed |> String.fromInt)
             , Text " "
             , ref (noun cardType needed)
-            , Text " mais vous n’en avez que "
+            , Text " mais vous n'en avez que "
             , Text (have |> String.fromInt)
             , Text "."
             ]
@@ -806,7 +806,7 @@ translate _ mdString =
             [ ref source, Text " ne reconnaît pas le paquet demandé. Vérifiez les informations fournies." ]
 
         SourceServiceFailure { source } ->
-            [ ref source, Text " n’a pas pu fournir le paquet. Veuillez réessayer plus tard ou choisir une autre source." ]
+            [ ref source, Text " n'a pas pu fournir le paquet. Veuillez réessayer plus tard ou choisir une autre source." ]
 
         ManyDecks ->
             [ Text "Many Decks" ]
@@ -863,7 +863,7 @@ translate _ mdString =
             [ Segment
                 [ Text "Le nombre de "
                 , ref (nounUnknownQuantity Point)
-                , Text " qu’un joueur doit obtenir pour gagner la partie."
+                , Text " qu'un joueur doit obtenir pour gagner la partie."
                 ]
             , Text " "
             , Segment [ Text "Si désactivé, la partie continue indéfiniment." ]
@@ -889,7 +889,7 @@ translate _ mdString =
         NeedAtLeastOneHuman ->
             [ Text "Malheureusement, les joueurs automatiques ne peuvent pas être le "
             , ref Czar
-            , Text ", vous avez donc besoin d’au moins un joueur humain pour commencer la partie."
+            , Text ", vous avez donc besoin d'au moins un joueur humain pour commencer la partie."
             , Text " (Même si un seul humain risque d'être un peu ennuyeux !)"
             ]
 
