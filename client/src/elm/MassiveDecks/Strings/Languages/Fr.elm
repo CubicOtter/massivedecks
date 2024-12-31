@@ -10,8 +10,7 @@ Contributors:
 
 import MassiveDecks.Card.Source.BuiltIn.Model as BuiltIn
 import MassiveDecks.Card.Source.Model as Source
-import MassiveDecks.Strings exposing (MdString(..), Noun(..), Quantity(..))
-import MassiveDecks.Strings.Languages.En.Internal as Internal
+import MassiveDecks.Strings exposing (MdString(..), Noun(..), Quantity(..), noun, nounMaybe, nounUnknownQuantity)
 import MassiveDecks.Strings.Languages.Model exposing (Language(..))
 import MassiveDecks.Strings.Translation as Translation
 import MassiveDecks.Strings.Translation.Model as Translation exposing (Result(..))
@@ -23,7 +22,7 @@ pack =
         { lang = Fr
         , code = "fr"
         , name = French
-        , translate = Internal.translate
+        , translate = translate
         , recommended = "cah-base-en" |> BuiltIn.hardcoded |> Source.BuiltIn
         }
 
@@ -258,7 +257,7 @@ translate _ mdString =
 
         HouseRuleRebootDescription { cost } ->
             [ Text "À tout moment, les joueurs peuvent échanger "
-            , Text (cost)
+            , Text (an cost)
             , ref (nounMaybe Point cost)
             , Text " pour défausser leur main et en tirer une nouvelle."
             ]
@@ -1375,6 +1374,14 @@ ref : MdString -> Translation.Result never
 ref =
     Ref Nothing
 
+an : Maybe Int -> String
+an amount =
+    case amount of
+        Just 1 ->
+            "an "
+
+        _ ->
+            ""
 
 {-| Take a number and give back the name of that number. Falls back to the number when it gets too big.
 -}
